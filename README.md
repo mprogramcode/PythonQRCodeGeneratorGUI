@@ -2,6 +2,8 @@
 
 # Must have the following Modules installed for the program to run in Python
 # pip install pyqt5-tools
+# pip install Pillow
+# pip install qrcode
 
 # To edit the UI using QT Designer in Windows 10 do the following steps:
 # Go to the path below and copy the designer to the desktop as a shortcut
