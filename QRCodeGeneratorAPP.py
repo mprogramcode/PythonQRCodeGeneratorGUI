@@ -28,13 +28,6 @@ def QRCodeLookup(QRDATA):
 
     return ConvtQRImg
 
-#Exits the program
-def BtnExitClicked():
-    sys.exit()
-
-def test():
-    print("test")
-
 class Ui_QRCODEAPP(object):
     def setupUi(self, QRCODEAPP):
         QRCODEAPP.setObjectName("QRCODEAPP")
@@ -66,6 +59,9 @@ class Ui_QRCODEAPP(object):
         #Get Data from QRCODE function and displays it on screen
         self.QRDisplayBox.setPixmap(QtGui.QPixmap.fromImage(QRCodeLookup(self.InputBox.text())))
 
+    def BtnExitClicked(self):
+        sys.exit()
+
     def retranslateUi(self, QRCODEAPP):
         _translate = QtCore.QCoreApplication.translate
         QRCODEAPP.setWindowTitle(_translate("QRCODEAPP", "QR Lookup"))
@@ -80,7 +76,7 @@ if __name__ == "__main__":
     ui.setupUi(QRCODEAPP)
 
     #Quits the app when the quit button is pressed
-    ui.APP_Quit.clicked.connect(BtnExitClicked)
+    ui.APP_Quit.clicked.connect(ui.BtnExitClicked)
 
     #Gets data and converts it to a barcode
     ui.Lookup.clicked.connect(ui.UpdateQRCode)
